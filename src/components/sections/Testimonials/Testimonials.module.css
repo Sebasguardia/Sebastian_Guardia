@@ -1,0 +1,109 @@
+.testimonials { overflow: hidden; }
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acidWord {
+  color: var(--c-acid);
+}
+
+:global(.swiper-slide) { height: auto !important; }
+
+.tCard {
+  position: relative;
+  background: var(--c-card);
+  border: var(--border-acid);
+  padding: 36px 32px;
+  height: 100%;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+.tCard:hover { box-shadow: var(--shadow-lg-acid); transform: translate(-3px, -3px); }
+
+.quote {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--c-acid);
+  line-height: 0.5;
+  margin-bottom: 24px;
+  opacity: 0.3;
+  display: block;
+}
+
+.tText {
+  font-size: 1rem;
+  color: var(--c-white);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.tAuthor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--c-border);
+  padding-top: 20px;
+}
+
+.avatar {
+  width: 44px; height: 44px;
+  border: 2px solid var(--c-acid);
+  object-fit: cover;
+  filter: grayscale(100%);
+  flex-shrink: 0;
+  background: var(--c-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--c-acid);
+}
+
+.authorName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.authorRole {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--c-acid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .sectionHeading {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .tCard {
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .tAuthor {
+    justify-content: center;
+    text-align: left; /* Keep author text left aligned for readability within centered card */
+  }
+  .quote {
+    font-size: 4rem;
+    margin-bottom: 16px;
+  }
+  .tText {
+    font-size: 0.9rem;
+  }
+}

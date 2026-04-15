@@ -1,0 +1,39 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 9000;
+  background: var(--c-card);
+  border: 1px solid var(--c-acid);
+  color: var(--c-white);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  /* Sombra dura brutalista */
+  box-shadow: 2px 2px 0 var(--c-acid);
+}
+
+/* Posicionamiento */
+.top    { bottom: calc(100% + 12px); left: 50%; transform: translate(-50%, 0); }
+.bottom { top:    calc(100% + 12px); left: 50%; transform: translate(-50%, 0); }
+.left   { right:  calc(100% + 12px); top: 50%;  transform: translate(0, -50%); }
+.right  { left:   calc(100% + 12px); top: 50%;  transform: translate(0, -50%); }
+
+/* Flecha decorativa */
+.arrow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--c-acid);
+}
+
+.top .arrow    { bottom: -3px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+.bottom .arrow { top:    -3px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+.left .arrow   { right:  -3px; top: 50%;  transform: translateY(-50%) rotate(45deg); }
+.right .arrow  { left:   -3px; top: 50%;  transform: translateY(-50%) rotate(45deg); }

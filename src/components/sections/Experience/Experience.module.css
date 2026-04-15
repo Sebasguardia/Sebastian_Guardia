@@ -1,0 +1,154 @@
+.experience { position: relative; }
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acidWord {
+  color: var(--c-acid);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 48px;
+  margin-top: 60px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--c-acid) 0%,
+    var(--c-acid) var(--progress, 0%),
+    var(--c-border) var(--progress, 0%)
+  );
+}
+
+.item {
+  position: relative;
+  padding-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s var(--ease-brutal), transform 0.6s var(--ease-brutal);
+}
+.item.visible { opacity: 1; transform: translateX(0); }
+
+.dot {
+  position: absolute;
+  left: -55px; top: 6px;
+  width: 14px; height: 14px;
+  border: 2px solid var(--c-acid);
+  background: var(--c-void);
+  transition: background 300ms ease;
+}
+.item.visible .dot { background: var(--c-acid); }
+
+.dot::after {
+  content: '';
+  position: absolute;
+  right: -24px; top: 50%;
+  width: 24px; height: 1px;
+  background: var(--c-acid);
+  transform: translateY(-50%);
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-acid);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.periodBadge {
+  background: rgba(232, 255, 0, 0.08);
+  border: 1px solid rgba(232, 255, 0, 0.2);
+  padding: 2px 8px;
+  font-size: 0.6rem;
+}
+
+.company {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--c-ash);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.achievements {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.achievement {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--c-ash);
+  line-height: 1.6;
+}
+.achievement::before {
+  content: '▸';
+  color: var(--c-acid);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .sectionHeading {
+    align-items: center;
+    text-align: center;
+  }
+  .timeline {
+    padding-left: 20px;
+    margin-top: 40px;
+    margin-inline: 10px;
+  }
+  .dot {
+    left: -27px;
+    width: 12px;
+    height: 12px;
+  }
+  .dot::after {
+    right: -14px;
+    width: 14px;
+  }
+  .item {
+    padding-bottom: 40px;
+  }
+  .company {
+    font-size: 1.3rem;
+  }
+  .role {
+    font-size: 0.75rem;
+  }
+  .achievement {
+    font-size: 0.85rem;
+  }
+}

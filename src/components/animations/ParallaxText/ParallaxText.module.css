@@ -1,0 +1,33 @@
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.scroller {
+  font-weight: 800;
+  text-transform: uppercase;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem; /* Separación entre cada repetición de texto */
+}
+
+.scroller span {
+  display: block;
+  /* PLUS: Brillo ultra-leve para un toque futurista oscuro */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.outlined {
+  color: transparent !important;
+}

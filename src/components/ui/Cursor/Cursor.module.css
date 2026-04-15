@@ -1,0 +1,73 @@
+.cursorDot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--c-acid);
+  border-radius: 0; /* Brutalista: cuadrado */
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 200ms ease, height 200ms ease;
+}
+
+.cursorRing {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--c-acid);
+  border-radius: 0; /* Cuadrado brutalista */
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  transform: translate(-50%, -50%);
+  transition: width 250ms ease, height 250ms ease, border-color 250ms ease;
+  mix-blend-mode: difference;
+}
+
+/* Estado hover */
+.cursorDot.hover {
+  width: 4px;
+  height: 4px;
+  background: var(--c-acid);
+}
+
+.cursorRing.hover {
+  width: 48px;
+  height: 48px;
+  border-color: var(--c-acid);
+}
+
+/* Estado click */
+.cursorDot.clicking {
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+.cursorRing.clicking {
+  width: 20px;
+  height: 20px;
+}
+
+/* PLUS: label de texto en el cursor para botones con data-cursor-label */
+.cursorLabel {
+  position: fixed;
+  top: 0; left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-void);
+  background: var(--c-acid);
+  padding: 4px 8px;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  transform: translate(12px, 12px);
+}
+
+.cursorLabel.visible {
+  opacity: 1;
+}

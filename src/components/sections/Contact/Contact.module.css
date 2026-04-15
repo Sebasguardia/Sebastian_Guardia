@@ -1,0 +1,266 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.bigText {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 10vw, 9rem);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  -webkit-text-stroke: 1px rgba(232, 255, 0, 0.5);
+  /* var(--c-acid) con opacidad */
+  color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  opacity: 0.15;
+  writing-mode: vertical-rl;
+}
+
+.topEmailWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 64px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+}
+
+@media (min-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+  }
+}
+
+.contactLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.acidWord {
+  color: var(--c-acid);
+}
+
+.contactSubtitle {
+  color: var(--c-white);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.contactActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.emailLink {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 4.5vw, 2.2rem);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: var(--c-white);
+  text-decoration: none;
+  border-bottom: 3px solid var(--c-border);
+  padding-bottom: 8px;
+  transition: border-color 300ms ease, color 300ms ease, transform 300ms ease;
+  width: max-content;
+}
+
+.emailLink:hover {
+  color: var(--c-acid);
+  border-bottom-color: var(--c-acid);
+  transform: scale(1.02);
+}
+
+/* Borrado whatsappBox porque ya no es necesario,
+   BrutalButton se alínea nativamente con flex-start en contactActions */
+
+.contactRight {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.formContainer {
+  background: var(--c-card);
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid var(--c-border);
+  position: relative;
+  box-shadow: -15px 15px 0 rgba(232, 255, 0, 0.05);
+  max-width: 680px;
+}
+
+.formDecoration {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 60px;
+  height: 60px;
+  border-top: 3px solid var(--c-acid);
+  border-left: 3px solid var(--c-acid);
+  pointer-events: none;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 16px;
+}
+
+.formFull {
+  grid-column: 1 / -1;
+}
+
+.field {
+  position: relative;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-acid);
+  margin-bottom: 8px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: var(--c-void);
+  border: 1px solid var(--c-border);
+  color: var(--c-white);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 16px;
+  outline: none;
+  transition: all 0.3s var(--ease-brutal);
+  resize: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--c-acid);
+  background: rgba(232, 255, 0, 0.02);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-acid);
+}
+
+.textarea {
+  min-height: 160px;
+}
+
+.input.error,
+.textarea.error {
+  border-color: var(--c-red);
+  box-shadow: 0 0 0 1px var(--c-red);
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--c-red);
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-white);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  transition: all 300ms var(--ease-brutal);
+}
+
+.socialLink:hover {
+  color: var(--c-void);
+  background: var(--c-white);
+  border-color: var(--c-white);
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.2);
+  transform: translate(-3px, -3px);
+}
+
+@media (max-width: 768px) {
+  .topEmailWrapper {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .contactTitle {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .contactSubtitle {
+    text-align: center;
+    margin-inline: auto;
+    font-size: 0.95rem;
+  }
+  .contactActions {
+    align-items: center;
+    width: 100%;
+  }
+  .socials {
+    justify-content: center;
+    width: 100%;
+  }
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .formContainer {
+    padding: 24px;
+    box-shadow: -8px 8px 0 rgba(232, 255, 0, 0.05);
+  }
+  .emailLink {
+    /* Ya tiene font-size dinámico, pero me aseguro que no rompa */
+    font-size: clamp(1rem, 6vw, 1.5rem);
+    width: auto;
+    max-width: 100%;
+    word-break: break-all;
+  }
+  .bigText {
+    display: none; /* Hide background text on mobile to avoid clutter */
+  }
+}

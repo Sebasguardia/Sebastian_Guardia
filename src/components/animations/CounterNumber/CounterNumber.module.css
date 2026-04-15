@@ -1,0 +1,38 @@
+.counterWrapper {
+  position: relative;
+  font-family: var(--font-number);
+  font-size: inherit;
+  font-weight: 400;
+  color: var(--c-acid);
+  display: inline-block;
+  z-index: 2;
+  transition: text-shadow 0.3s ease;
+}
+
+.counterWrapper[data-complete="true"] {
+  /* PLUS: Iluminación de éxito sutil tipo terminal antigua */
+  text-shadow: 0 0 10px rgba(232, 255, 0, 0.4);
+}
+
+.shadowClone {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  color: var(--c-void);
+  -webkit-text-stroke: 1px var(--c-acid);
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  animation: slamDrop 0.4s var(--ease-bounce) forwards;
+}
+
+.hiddenStart {
+  opacity: 0;
+}
+
+@keyframes slamDrop {
+  0% { transform: translate(-4px, -6px); opacity: 0; }
+  100% { transform: translate(0, 0); opacity: 0.4; }
+}

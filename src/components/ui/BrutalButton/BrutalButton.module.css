@@ -1,0 +1,106 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  transition:
+    transform 150ms var(--ease-brutal),
+    box-shadow 150ms var(--ease-brutal);
+  white-space: nowrap;
+}
+
+/* Sombra "levantada" */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+/* ── VARIANTES ── */
+.acid {
+  background: var(--c-acid);
+  color: var(--c-void);
+  box-shadow: 4px 4px 0px var(--c-void);
+}
+
+.acid:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--c-void);
+}
+
+.acid:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--c-void);
+}
+
+.outline {
+  background: transparent;
+  color: var(--c-acid);
+  border: var(--border-acid);
+  box-shadow: 4px 4px 0px var(--c-acid);
+}
+
+.outline:hover {
+  background: rgba(232, 255, 0, 0.06);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--c-acid);
+}
+
+.outline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--c-acid);
+}
+
+.red {
+  background: transparent;
+  color: var(--c-red);
+  border: var(--border-red);
+  box-shadow: var(--shadow-red);
+}
+
+.red:hover {
+  background: rgba(255, 23, 68, 0.08);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--c-red);
+}
+
+.red:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--c-red);
+}
+
+/* PLUS: variante ghost — borde sutil, texto blanco */
+.ghost {
+  background: transparent;
+  color: var(--c-white);
+  border: 1px solid var(--c-border);
+  box-shadow: 3px 3px 0px var(--c-border);
+}
+
+.ghost:hover {
+  border-color: var(--c-ash);
+  color: var(--c-acid);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--c-ash);
+}
+
+/* Icono flecha */
+.arrow {
+  transition: transform 250ms var(--ease-bounce);
+  flex-shrink: 0;
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}

@@ -1,0 +1,19 @@
+.splitWrap {
+  /* Necesario para la perspectiva del tilt 3D (rotationX) de GSAP */
+  perspective: 1000px;
+  display: inline-block; /* Cambiado a inline-block para no romper el flujo del texto */
+  vertical-align: top;
+}
+
+/* Fix helper para SplitType: Asegura que el wrapping invisible no corte letras altas */
+:global(.word) {
+  overflow: visible !important;
+  display: inline-block;
+  padding-bottom: 0.1em;
+  margin-right: 0.25em; /* Espaciado entre palabras vital en tipografía Neo-Brutal */
+}
+
+:global(.char) {
+  display: inline-block;
+  transform-style: preserve-3d;
+}

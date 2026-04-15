@@ -1,0 +1,12 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--c-acid);
+  z-index: calc(var(--z-nav) + 10);
+  /* PLUS: sombra de neón para que brille sobre cualquier fondo */
+  box-shadow: 0 0 8px var(--c-acid), 0 0 20px rgba(232, 255, 0, 0.4);
+  pointer-events: none;
+}

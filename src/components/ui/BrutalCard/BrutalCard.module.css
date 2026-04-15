@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  padding: 32px 28px;
+  overflow: hidden;
+}
+
+/* Línea de acento superior */
+.accentBar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+/* ── Variantes de color de acento ── */
+.acid .accentBar  { background: var(--c-acid); }
+.red .accentBar   { background: var(--c-red); }
+.cyan .accentBar  { background: var(--c-cyan); }
+
+.acid  { box-shadow: 3px 3px 0 var(--c-acid); }
+.red   { box-shadow: 3px 3px 0 var(--c-red); }
+.cyan  { box-shadow: 3px 3px 0 var(--c-cyan); }
+
+/* ── Estado hover ── */
+.hoverable {
+  transition: transform 150ms var(--ease-brutal), box-shadow 150ms var(--ease-brutal);
+  cursor: default;
+}
+
+.acid.hoverable:hover  { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--c-acid); }
+.red.hoverable:hover   { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--c-red); }
+.cyan.hoverable:hover  { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--c-cyan); }

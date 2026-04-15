@@ -1,0 +1,391 @@
+.hero {
+  position: relative;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%,
+      transparent 0%,
+      rgba(8, 8, 8, 0.6) 60%,
+      rgba(8, 8, 8, 0.95) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 40vh clamp(8px, 2vw, 30px) 0;
+  /* Lowered to 22vh and even tighter side padding */
+  max-width: 100%;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-acid);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.eyebrow.animate {
+  animation: fadeSlideUp 0.8s var(--ease-brutal) 0.2s forwards;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-acid);
+  box-shadow: 0 0 8px var(--c-acid), 0 0 20px var(--c-acid);
+  animation: pulseGlow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 6px var(--c-acid);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--c-acid), 0 0 40px var(--c-acid);
+    opacity: 0.7;
+  }
+}
+
+.nameWrap {
+  overflow: hidden;
+  margin-bottom: -8px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 9.2vw, 11rem);
+  /* Reduced vw slightly to avoid clipping, increased max */
+  line-height: 0.85;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  /* Tighter letter spacing for impact */
+  color: var(--c-white);
+  transition: color 300ms ease;
+  display: block;
+  transform: translateY(110%);
+}
+
+.name.animate {
+  animation: slideUpClip 1s var(--ease-brutal) 0.3s forwards;
+}
+
+.nameStroke {
+  -webkit-text-stroke: 2px var(--c-acid);
+  color: transparent;
+  transform: translateY(110%);
+}
+
+.nameStroke.animate {
+  animation: slideUpClip 1s var(--ease-brutal) 0.45s forwards;
+}
+
+@keyframes slideUpClip {
+  from {
+    transform: translateY(110%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--c-acid), transparent);
+  margin-block: 24px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.divider.animate {
+  animation: scaleInX 0.8s var(--ease-brutal) 0.7s forwards;
+}
+
+@keyframes scaleInX {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  opacity: 0;
+  margin-top: 24px;
+}
+
+.bottomRow.animate {
+  animation: fadeSlideUp 0.8s var(--ease-brutal) 0.9s forwards;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ash);
+  max-width: 320px;
+  line-height: 1.8;
+}
+
+.roleHighlight {
+  color: var(--c-acid);
+  font-weight: 700;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-ash);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.scrollIndicator:hover {
+  color: var(--c-acid);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(var(--c-acid), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.heroNum {
+  font-family: var(--font-number);
+  font-size: clamp(6rem, 20vw, 18rem);
+  position: absolute;
+  right: var(--gutter);
+  bottom: -30px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232, 255, 0, 0.06);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  z-index: 1;
+}
+
+.marqueeWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  border-top: 1px solid rgba(232, 255, 0, 0.1);
+  background: rgba(8, 8, 8, 0.6);
+  padding-block: 12px;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollPulseHoriz {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  51% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-top: 45vh;
+    /* Bajado aún más para dar espacio al Navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-inline: 15px;
+  }
+
+  .eyebrow {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+    font-size: clamp(0.5rem, 2.5vw, 0.65rem);
+    width: 100%;
+  }
+
+  .statusDot {
+    width: 8px;
+    height: 8px;
+    border: none;
+  }
+
+  .name {
+    /* Reducido para que "SEBASTIAN" entre completo sin cortarse */
+    font-size: clamp(2.2rem, 11vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    white-space: normal;
+    /* Permitir que rompa si es necesario en pantallas muy pequeñas */
+    word-break: break-all;
+  }
+
+  .nameWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    /* Para que el glitch no se corte */
+    margin-bottom: 4px;
+  }
+
+  .divider {
+    transform-origin: center;
+    margin-block: 24px;
+    width: 80%;
+    /* No tan larga para que se vea más centrado */
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .role {
+    max-width: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .ctaRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ctaRow>* {
+    width: 100% !important;
+    max-width: 280px;
+  }
+
+  .scrollIndicator {
+    margin-inline: auto;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .scrollLine {
+    height: 40px;
+    width: 1px;
+    background: linear-gradient(var(--c-acid), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  .heroNum {
+    font-size: 5rem;
+    bottom: 80px;
+    right: 20px;
+    opacity: 0.15;
+  }
+}
