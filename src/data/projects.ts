@@ -12,13 +12,6 @@ export const projects: Project[] = [
     clientType: 'empresa',
     year: '2024',
     featured: true,
-    role: 'Lead Frontend Developer',
-    challenge: 'El cliente necesitaba una experiencia de compra completamente inédita que rompiera los esquemas tradicionales de e-commerce, manteniendo una performance impecable para altas transacciones.',
-    result: 'Se logró una plataforma con tiempos de carga inferiores a 1s, aumentando la tasa de conversión en un 40% durante los primeros 3 meses de lanzamiento y recibiendo varios premios de diseño Awwwards.',
-    gallery: [
-      'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=1600&auto=format&fit=crop',
-    ],
   },
   {
     id: '02',
