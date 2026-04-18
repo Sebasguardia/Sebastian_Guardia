@@ -44,7 +44,13 @@ export const About = ({ id = 'sobre-mi' }: AboutProps) => {
               </p>
 
               <div className={styles.actionRow}>
-                <BrutalButton variant="acid" href="#" showArrow={false} className={styles.cvBtn}>
+                <BrutalButton
+                  variant="acid"
+                  href="/CV_Sebastian_Guardia.pdf"
+                  download="CV_Sebastian_Guardia.pdf"
+                  showArrow={false}
+                  className={styles.cvBtn}
+                >
                   DESCARGAR CV <FiDownload size={16} style={{ marginLeft: '10px' }} />
                 </BrutalButton>
               </div>

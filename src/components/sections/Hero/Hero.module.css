@@ -83,7 +83,7 @@
 .name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 9.2vw, 11rem);
+  font-size: clamp(2.5rem, 7.5vw, 9rem);
   /* Reduced vw slightly to avoid clipping, increased max */
   line-height: 0.85;
   white-space: nowrap;

@@ -12,6 +12,7 @@ interface Props {
   showArrow?: boolean;
   className?: string;
   disabled?: boolean;
+  download?: boolean | string;
 }
 
 export const BrutalButton = ({
@@ -22,12 +23,13 @@ export const BrutalButton = ({
   showArrow = true,
   className,
   disabled,
+  download,
 }: Props) => {
   const cls = clsx(styles.btn, styles[variant], className);
 
   if (href) {
     return (
-      <a href={href} className={cls}>
+      <a href={href} className={cls} download={download}>
         {children}
         {showArrow && <ArrowRight size={14} className={styles.arrow} />}
       </a>

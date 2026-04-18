@@ -184,13 +184,15 @@ export const ProjectModal = ({ project, allProjects, onClose, onNavigate }: Proj
         <div className={styles.modalHeroSection} style={{ '--modal-accent': accent } as React.CSSProperties}>
           <span className={styles.modalNum}>{String(parseInt(project.id)).padStart(2, '0')}</span>
           <div className={styles.modalMeta}>
-            <span
-              className={styles.modalClientBadge}
-              style={{ color: catColor, borderColor: catColor } as React.CSSProperties}
-            >
-              <span className={styles.clientDot} style={{ background: catColor }} />
-              {catLabel}
-            </span>
+            {project.clientType && (
+              <span
+                className={styles.modalClientBadge}
+                style={{ color: catColor, borderColor: catColor } as React.CSSProperties}
+              >
+                <span className={styles.clientDot} style={{ background: catColor }} />
+                {catLabel}
+              </span>
+            )}
             {project.year && (
               <span className={styles.modalYear}>
                 <FiCalendar size={11} /> {project.year}

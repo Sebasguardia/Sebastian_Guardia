@@ -1,5 +1,7 @@
 import { GlitchText } from '../../ui/GlitchText/GlitchText';
 import { scrollTo } from '../../../hooks/useSmoothScroll';
+import { FiArrowUp, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { MagneticElement } from '../../animations/MagneticElement/MagneticElement';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
@@ -7,29 +9,49 @@ export const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      {/* Botón camuflado brutalista de "Volver Arriba" usando GlitchText */}
-      <div 
-        className={styles.glitchWrap} 
-        onClick={() => scrollTo('#inicio')}
-        data-cursor-label="ARRIVA"
-      >
-        <GlitchText autoGlitch>Sebastian Guardia</GlitchText>
+      <div className={styles.footerTop}>
+        <div className={styles.brand}>
+          <GlitchText autoGlitch>SEBASTIAN GUARDIA</GlitchText>
+          <div className={styles.statusBox}>
+            <span className={styles.statusDot} />
+            <span className={styles.statusText}>ALL SYSTEMS NOMINAL</span>
+          </div>
+        </div>
+
+        <MagneticElement strength={0.4}>
+          <button
+            className={styles.upBtn}
+            onClick={() => scrollTo('#inicio')}
+            data-cursor-label="ARRIBA"
+            aria-label="Volver arriba"
+          >
+            <FiArrowUp size={24} />
+          </button>
+        </MagneticElement>
       </div>
 
-      <div className={styles.links}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.link} data-hover>
-          GITHUB
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.link} data-hover>
-          LINKEDIN
-        </a>
-        <a href="mailto:hola@ejemplo.com" className={styles.link} data-hover>
-          EMAIL
-        </a>
-      </div>
+      <div className={styles.footerBottom}>
+        <div className={styles.links}>
+          <MagneticElement strength={0.2}>
+            <a href="https://github.com/Sebasguardia" target="_blank" rel="noopener noreferrer" className={styles.link} data-hover>
+              <FiGithub size={16} /> GITHUB
+            </a>
+          </MagneticElement>
+          <MagneticElement strength={0.2}>
+            <a href="https://www.linkedin.com/in/sebastian-guardia-64a865379" target="_blank" rel="noopener noreferrer" className={styles.link} data-hover>
+              <FiLinkedin size={16} /> LINKEDIN
+            </a>
+          </MagneticElement>
+          <MagneticElement strength={0.2}>
+            <a href="mailto:sebastianguardiaticlla@gmail.com" className={styles.link} data-hover>
+              <FiMail size={16} /> EMAIL
+            </a>
+          </MagneticElement>
+        </div>
 
-      <div className={styles.copyright}>
-        © {currentYear} SEBASTIAN GUARDIA. ALL SYSTEMS NOMINAL.
+        <div className={styles.copyright}>
+          © {currentYear} — CREATED WITH ACID & COFFEE.
+        </div>
       </div>
     </footer>
   );

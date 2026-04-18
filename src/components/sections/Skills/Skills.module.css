@@ -16,10 +16,11 @@
 .carouselWrap {
   position: relative;
   margin-inline: calc(-1 * var(--gutter));
-  overflow: visible; /* Cambiado de hidden a visible para no cortar los tooltips */
+  overflow: visible;
+  /* Cambiado de hidden a visible para no cortar los tooltips */
   border-top: var(--border-acid);
   border-bottom: var(--border-acid);
-  padding-block: 40px;
+  padding-block: 100px;
   background: var(--c-concrete);
   margin-block: 60px;
 }
@@ -30,7 +31,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 150px; /* Incrementado para fade más suave en carousel más grande */
+  width: 150px;
+  /* Incrementado para fade más suave en carousel más grande */
   z-index: 2;
   pointer-events: none;
 }
@@ -47,9 +49,11 @@
 
 .carouselTrack {
   display: flex;
-  gap: 80px; /* Más espacio entre items para que respiren al ser más grandes */
+  gap: 80px;
+  /* Más espacio entre items para que respiren al ser más grandes */
   align-items: center;
-  animation: logoScroll 25s linear infinite; /* Un poco más lento para compensar tamaño */
+  animation: logoScroll 25s linear infinite;
+  /* Un poco más lento para compensar tamaño */
   width: max-content;
 }
 
@@ -71,26 +75,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px; /* Aumentado gap entre icono y nombre */
-  opacity: 0.5; /* Ligeramente más opaco por defecto */
+  gap: 16px;
+  /* Aumentado gap entre icono y nombre */
+  opacity: 0.5;
+  /* Ligeramente más opaco por defecto */
   transition: opacity 300ms ease, transform 300ms ease;
-  cursor: pointer; /* Cambiado a pointer porque hay tooltip interactivo */
-  min-width: 120px; /* Incrementado ancho mínimo */
+  cursor: pointer;
+  /* Cambiado a pointer porque hay tooltip interactivo */
+  min-width: 120px;
+  /* Incrementado ancho mínimo */
 }
 
 .logoItem:hover {
   opacity: 1;
-  transform: scale(1.2); /* Zoom más pronunciado en el hover */
+  transform: scale(1.2);
+  /* Zoom más pronunciado en el hover */
 }
 
 .logoIcon {
-  font-size: 4rem; /* Duplicado tamaño del icono (antes 2rem) */
+  font-size: 4rem;
+  /* Duplicado tamaño del icono (antes 2rem) */
   line-height: 1;
 }
 
 .logoName {
   font-family: var(--font-mono);
-  font-size: 0.85rem; /* Letra un poco más grande (antes 0.6rem) */
+  font-size: 0.85rem;
+  /* Letra un poco más grande (antes 0.6rem) */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--c-ash);
@@ -101,28 +112,36 @@
   .skills {
     padding-bottom: 20px;
   }
+
   .heading {
     align-items: center;
     text-align: center;
     margin-bottom: 24px;
     padding-inline: 15px;
   }
+
   .carouselTrack {
     gap: 40px;
     animation-duration: 20s;
   }
+
   .logoIcon {
     font-size: 2.8rem;
   }
+
   .logoName {
     font-size: 0.7rem;
     letter-spacing: 0.1em;
   }
+
   .carouselWrap {
-    padding-block: 40px; /* Mantener espacio para el tooltip arriba */
+    padding-block: 40px;
+    /* Mantener espacio para el tooltip arriba */
     margin-block: 30px;
-    overflow: visible; /* Clave para el tooltip */
+    overflow: visible;
+    /* Clave para el tooltip */
   }
+
   .logoItem {
     min-width: 80px;
   }

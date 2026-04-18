@@ -16,10 +16,10 @@ export const Contact = ({ id = 'contacto' }: ContactProps) => (
     <div className={`container`}>
       <ScrollReveal direction="up">
         <SectionLabel number="07">Hablemos</SectionLabel>
-        
+
         {/* CORREO GIGANTE COMO TÍTULO */}
         <div className={styles.topEmailWrapper}>
-          <a href="mailto:hola@sebastianguardia.com" className={styles.emailLink} data-hover>
+          <a href="sebastianguardiaticlla@gmail.com" className={styles.emailLink} data-hover>
             hola@sebastianguardia.com
           </a>
         </div>
@@ -34,20 +34,20 @@ export const Contact = ({ id = 'contacto' }: ContactProps) => (
               <span className={styles.acidWord}>Hagámoslo realidad.</span>
             </h2>
             <p className={styles.contactSubtitle}>
-              Estoy disponible para trabajos freelance y nuevas oportunidades. 
+              Estoy disponible para trabajos freelance y nuevas oportunidades.
               Escríbeme al correo, completa el formulario o mándame un WhatsApp directo.
             </p>
-            
+
             <div className={styles.contactActions}>
-              <BrutalButton variant="acid" href="https://wa.me/1234567890" showArrow={false}>
-                 ENVIAR WHATSAPP <FiMessageCircle size={16} />
+              <BrutalButton variant="acid" href="https://wa.me/954001722" showArrow={false}>
+                ENVIAR WHATSAPP <FiMessageCircle size={16} />
               </BrutalButton>
-              
+
               <div className={styles.socials}>
-                <a href="https://github.com/sebastianguardia" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub" title="GitHub" data-hover>
+                <a href="https://github.com/Sebasguardia" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub" title="GitHub" data-hover>
                   <FiGithub size={18} /> GITHUB
                 </a>
-                <a href="https://linkedin.com/in/sebastianguardia" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn" title="LinkedIn" data-hover>
+                <a href="https://www.linkedin.com/in/sebastian-guardia-64a865379" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn" title="LinkedIn" data-hover>
                   <FiLinkedin size={18} /> LINKEDIN
                 </a>
               </div>

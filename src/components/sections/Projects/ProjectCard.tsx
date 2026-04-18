@@ -86,16 +86,18 @@ export const ProjectCard = ({ project, index, onClick, featured }: ProjectCardPr
       <span className={styles.cardNum}>{String(index + 1).padStart(2, '0')}</span>
 
       {/* Badge tipo cliente — aparece al hover */}
-      <motion.div
-        className={styles.clientBadge}
-        style={{ color: catColor, borderColor: catColor } as React.CSSProperties}
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : -10 }}
-        transition={{ duration: 0.25 }}
-      >
-        <span className={styles.clientDot} style={{ background: catColor }} />
-        {catLabel}
-      </motion.div>
+      {project.clientType && (
+        <motion.div
+          className={styles.clientBadge}
+          style={{ color: catColor, borderColor: catColor } as React.CSSProperties}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : -10 }}
+          transition={{ duration: 0.25 }}
+        >
+          <span className={styles.clientDot} style={{ background: catColor }} />
+          {catLabel}
+        </motion.div>
+      )}
 
       {/* Año */}
       {project.year && (

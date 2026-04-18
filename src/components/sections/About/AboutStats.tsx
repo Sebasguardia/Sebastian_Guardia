@@ -12,9 +12,9 @@ interface Props {
 }
 
 const defaultStats: Stat[] = [
-  { value: 5,  suffix: '+', label: 'Años XP'    },
-  { value: 30, suffix: '+', label: 'Proyectos'  },
-  { value: 15, suffix: '+', label: 'Clientes'   },
+  { value: 1, suffix: '+', label: 'Años XP' },
+  { value: 5, suffix: '+', label: 'Proyectos' },
+  { value: 0, suffix: '+', label: 'Clientes' },
 ];
 
 /**
