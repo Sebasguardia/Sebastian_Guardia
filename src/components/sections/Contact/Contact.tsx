@@ -19,7 +19,7 @@ export const Contact = ({ id = 'contacto' }: ContactProps) => (
 
         {/* CORREO GIGANTE COMO TÍTULO */}
         <div className={styles.topEmailWrapper}>
-          <a href="sebastianguardiaticlla@gmail.com" className={styles.emailLink} data-hover>
+          <a href="mailto:sebastianguardiaticlla@gmail.com" className={styles.emailLink} data-hover>
             hola@sebastianguardia.com
           </a>
         </div>
@@ -39,7 +39,7 @@ export const Contact = ({ id = 'contacto' }: ContactProps) => (
             </p>
 
             <div className={styles.contactActions}>
-              <BrutalButton variant="acid" href="https://wa.me/954001722" showArrow={false}>
+              <BrutalButton variant="acid" href="https://wa.me/51954001722" showArrow={false} target="_blank" rel="noopener noreferrer">
                 ENVIAR WHATSAPP <FiMessageCircle size={16} />
               </BrutalButton>
 

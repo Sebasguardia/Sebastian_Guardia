@@ -245,12 +245,12 @@ export const ProjectModal = ({ project, allProjects, onClose, onNavigate }: Proj
           {/* CTAs */}
           <div className={styles.modalCtas}>
             {project.link && (
-              <BrutalButton variant="acid" href={project.link}>
+              <BrutalButton variant="acid" href={project.link} target="_blank" rel="noopener noreferrer">
                 VER DEMO <FiExternalLink size={13} />
               </BrutalButton>
             )}
             {project.github && (
-              <BrutalButton variant="outline" href={project.github} showArrow={false}>
+              <BrutalButton variant="outline" href={project.github} showArrow={false} target="_blank" rel="noopener noreferrer">
                 CÓDIGO FUENTE <FiGithub size={13} />
               </BrutalButton>
             )}

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { FiSend } from 'react-icons/fi';
 import { BrutalButton } from '../../ui/BrutalButton/BrutalButton';
 import { clsx } from 'clsx';
+import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 
 const schema = z.object({
@@ -21,11 +22,26 @@ export const ContactForm = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (_data: FormData) => {
-    // TODO: Integrar emailjs-com con tus credenciales
-    await new Promise(r => setTimeout(r, 1000));
-    toast.success('¡Mensaje enviado! Te respondo pronto.', { icon: '⚡' });
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      // Se utiliza EmailJS para enviar el correo mediante variables de entorno en Vite
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+        {
+          from_name: data.name,
+          reply_to: data.email,
+          subject: data.subject,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+      );
+      toast.success('¡Mensaje enviado! Te respondo pronto.', { icon: '⚡' });
+      reset();
+    } catch (error) {
+      console.error('Error al enviar mensaje:', error);
+      toast.error('Hubo un problema enviando el mensaje. Por favor intenta mediante WhatsApp o el correo directo.');
+    }
   };
 
   return (
