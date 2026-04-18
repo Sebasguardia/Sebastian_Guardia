@@ -2,7 +2,7 @@ import {
   SiReact, SiTypescript, SiNodedotjs, SiPython,
   SiPostgresql, SiFigma,
   SiNextdotjs, SiExpress, SiFastapi, SiTailwindcss, SiNestjs, SiSupabase, SiVercel, SiGit,
-  SiJavascript, SiMysql, SiOpenai, SiRender, SiHtml5, SiCss
+  SiJavascript, SiMysql, SiOpenai, SiRender, SiHtml5, SiCss, SiPhp
 } from 'react-icons/si';
 import { Tooltip } from '../../ui/Tooltip/Tooltip';
 import styles from './Skills.module.css';
@@ -55,6 +55,7 @@ const techList = [
   { icon: SiVercel, name: 'Vercel', color: '#ffffff', cat: 'tools' as const, level: 'mid' as const },
   { icon: SiGit, name: 'Git', color: '#F05032', cat: 'tools' as const, level: 'mid' as const },
   { icon: SiAntigravity, name: 'Antigravity IDE', color: 'transparent', cat: 'tools' as const, level: 'mid' as const },
+  { icon: SiPhp, name: 'PHP', color: '#777BB4', cat: 'backend' as const, level: 'mid' as const },
 ];
 
 
