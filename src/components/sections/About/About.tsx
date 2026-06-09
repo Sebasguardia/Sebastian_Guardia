@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Tilt from 'react-parallax-tilt';
-import { FiDownload, FiEye } from 'react-icons/fi';
+import { FiDownload } from 'react-icons/fi';
 import { ScrollReveal } from '../../ui/ScrollReveal/ScrollReveal';
 import { SectionLabel } from '../../ui/SectionLabel/SectionLabel';
 import { AboutStats } from './AboutStats';
