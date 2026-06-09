@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import Tilt from 'react-parallax-tilt';
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload, FiEye } from 'react-icons/fi';
 import { ScrollReveal } from '../../ui/ScrollReveal/ScrollReveal';
 import { SectionLabel } from '../../ui/SectionLabel/SectionLabel';
 import { AboutStats } from './AboutStats';
 import { NoiseOverlay } from '../../ui/NoiseOverlay/NoiseOverlay';
-import { BrutalButton } from '../../ui/BrutalButton/BrutalButton';
+import { MagneticElement } from '../../animations/MagneticElement/MagneticElement';
 import styles from './About.module.css';
 
 interface AboutProps { id?: string; }
@@ -44,15 +44,30 @@ export const About = ({ id = 'sobre-mi' }: AboutProps) => {
               </p>
 
               <div className={styles.actionRow}>
-                <BrutalButton
-                  variant="acid"
-                  href="/CV_Sebastian_Guardia.pdf"
-                  download="CV_Sebastian_Guardia.pdf"
-                  showArrow={false}
-                  className={styles.cvBtn}
-                >
-                  DESCARGAR CV <FiDownload size={16} style={{ marginLeft: '10px' }} />
-                </BrutalButton>
+                <MagneticElement>
+                  <div className={styles.splitButton}>
+                    {/* Parte Izquierda - Descargar */}
+                    <a 
+                      href="/CV_Sebastian_Guardia.pdf"
+                      download="CV_Sebastian_Guardia.pdf"
+                      className={styles.downloadPart}
+                      title="Descargar CV"
+                    >
+                      <FiDownload size={24} />
+                    </a>
+                    
+                    {/* Parte Derecha - Ver CV */}
+                    <a 
+                      href="/CV_Sebastian_Guardia.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.viewPart}
+                      title="Ver CV en nueva pestaña"
+                    >
+                      VER CV
+                    </a>
+                  </div>
+                </MagneticElement>
               </div>
             </ScrollReveal>
 

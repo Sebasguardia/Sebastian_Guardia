@@ -118,5 +118,28 @@ export const projects: Project[] = [
       'images/galery/hotel/0.png',
 
     ],
+  },
+  {
+    id: '06',
+    title: 'PORTFOLIO PERSONAL',
+    description: 'Portfolio personal con diseño neo-brutalista inmersivo, animaciones avanzadas con GSAP y Three.js, demostrando dominio de animaciones web, UX/UI y arquitectura de componentes React.',
+    image: '/images/project/portfolio.png',
+    tags: ['React', 'TypeScript', 'Vite', 'GSAP', 'Three.js', 'CSS Modules'],
+    link: 'https://sebastian-guardia-t.vercel.app',
+    github: 'https://github.com/Sebasguardia/Sebastian_Guardia.git',
+    clientType: 'personal',
+    year: '2026',
+    role: 'Full Stack Designer & Developer',
+    challenge: 'Crear una experiencia inmersiva que refleje habilidades técnicas avanzadas en animaciones, diseño visual y desarrollo frontend, manteniendo excelente rendimiento y accesibilidad en un sitio altamente interactivo.',
+    result: 'Desarrollo de un portfolio con Canvas 3D inmersivo en el hero, animaciones GSAP sincronizadas con scroll, componentes reutilizables con CSS Modules, hooks personalizados y una arquitectura modular escalable que demuestra dominio de herramientas modernas y mejores prácticas de desarrollo.',
+    gallery: [
+      'images/galery/portfolio/0.png',
+      'images/galery/portfolio/1.png',
+      'images/galery/portfolio/2.png',
+      'images/galery/portfolio/3.png',
+      'images/galery/portfolio/4.png',
+      'images/galery/portfolio/5.png'
+    ],
+    featured: true,
   }
 ];

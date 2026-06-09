@@ -75,6 +75,65 @@
   margin-top: 40px;
 }
 
+/* ── SPLIT BUTTON ── */
+.splitButton {
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--c-acid);
+  color: var(--c-void);
+  box-shadow: 4px 4px 0px var(--c-void);
+  border: 0;
+  cursor: pointer;
+  transition: all 150ms var(--ease-brutal);
+  overflow: hidden;
+}
+
+.splitButton:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px var(--c-void);
+}
+
+.splitButton:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--c-void);
+}
+
+/* Parte Izquierda - Icono Descarga */
+.downloadPart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  background: var(--c-void);
+  border-right: 2px solid var(--c-acid);
+  color: var(--c-acid);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.downloadPart:hover {
+  background: var(--c-concrete);
+}
+
+/* Parte Derecha - Texto Ver CV */
+.viewPart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--c-acid);
+  color: var(--c-void);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  flex: 1;
+}
+
 .cvBtn {
   min-width: 220px;
 }

@@ -4,6 +4,7 @@ import { ScrollReveal } from '../../ui/ScrollReveal/ScrollReveal';
 import { NoiseOverlay } from '../../ui/NoiseOverlay/NoiseOverlay';
 import { ContactForm } from './ContactForm';
 import { BrutalButton } from '../../ui/BrutalButton/BrutalButton';
+import { MagneticElement } from '../../animations/MagneticElement/MagneticElement';
 import styles from './Contact.module.css';
 
 interface ContactProps { id?: string; }
@@ -39,17 +40,23 @@ export const Contact = ({ id = 'contacto' }: ContactProps) => (
             </p>
 
             <div className={styles.contactActions}>
-              <BrutalButton variant="acid" href="https://wa.me/51954001722" showArrow={false} target="_blank" rel="noopener noreferrer">
-                ENVIAR WHATSAPP <FiMessageCircle size={16} />
-              </BrutalButton>
+              <MagneticElement>
+                <BrutalButton variant="acid" href="https://wa.me/51954001722" showArrow={false} target="_blank" rel="noopener noreferrer">
+                  ENVIAR WHATSAPP <FiMessageCircle size={16} />
+                </BrutalButton>
+              </MagneticElement>
 
               <div className={styles.socials}>
-                <a href="https://github.com/Sebasguardia" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub" title="GitHub" data-hover>
-                  <FiGithub size={18} /> GITHUB
-                </a>
-                <a href="https://www.linkedin.com/in/sebastian-guardia-64a865379" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn" title="LinkedIn" data-hover>
-                  <FiLinkedin size={18} /> LINKEDIN
-                </a>
+                <MagneticElement>
+                  <a href="https://github.com/Sebasguardia" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub" title="GitHub" data-hover>
+                    <FiGithub size={18} /> GITHUB
+                  </a>
+                </MagneticElement>
+                <MagneticElement>
+                  <a href="https://www.linkedin.com/in/sebastian-guardia-64a865379" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn" title="LinkedIn" data-hover>
+                    <FiLinkedin size={18} /> LINKEDIN
+                  </a>
+                </MagneticElement>
               </div>
             </div>
           </ScrollReveal>
