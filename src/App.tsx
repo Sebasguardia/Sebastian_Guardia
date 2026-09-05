@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useSmoothScroll } from './hooks/useSmoothScroll';
+import { useSEO } from './hooks/useSEO';
 
 // Layout
 import { Navbar }   from './components/layout/Navbar/Navbar';
@@ -26,6 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useSmoothScroll();
+  useSEO();
 
   return (
     <>

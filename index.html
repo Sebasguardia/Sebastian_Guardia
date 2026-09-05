@@ -1,11 +1,151 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/sebas.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sebastian Guardia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ════════════════════════════════════════════════════════
+       FAVICON & MANIFEST
+       ════════════════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/png"   href="/sebas.png" />
+  <link rel="apple-touch-icon"                    href="/sebas.png" />
+  <link rel="manifest"                            href="/site.webmanifest" />
+  <meta name="theme-color"                        content="#0a0a0a" />
+  <meta name="msapplication-TileColor"            content="#0a0a0a" />
+
+  <!-- ════════════════════════════════════════════════════════
+       SEO BÁSICO
+       ════════════════════════════════════════════════════════ -->
+  <title>Sebastian Guardia — Full Stack Developer &amp; UI/UX Engineer</title>
+  <meta name="description"
+        content="Portfolio de Sebastian Guardia — Full Stack Developer especializado en React, Next.js, TypeScript, NestJS y animaciones web inmersivas con GSAP y Three.js." />
+  <meta name="keywords"
+        content="Sebastian Guardia, Full Stack Developer, React Developer, Next.js, TypeScript, NestJS, Node.js, PostgreSQL, GSAP, Three.js, Portfolio, Frontend Engineer, Backend Developer, UI/UX, SaaS, Desarrollador Web Ecuador" />
+  <meta name="author"           content="Sebastian Guardia" />
+  <meta name="robots"           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot"        content="index, follow" />
+  <meta name="generator"        content="Vite + React + TypeScript" />
+  <meta name="language"         content="Spanish" />
+  <meta name="revisit-after"    content="7 days" />
+
+  <!-- ════════════════════════════════════════════════════════
+       VERIFICACIÓN (Pega el content de Search Console aquí)
+       ════════════════════════════════════════════════════════ -->
+  <meta name="google-site-verification" content="Q2fkQg7l5ydhQ0ieA71AU-lJxWZdue8SNAhC7XRHzg8" />
+
+  <!-- ════════════════════════════════════════════════════════
+       CANONICAL
+       ════════════════════════════════════════════════════════ -->
+  <link rel="canonical" href="https://sebastian-guardia-t.vercel.app" />
+
+  <!-- ════════════════════════════════════════════════════════
+       OPEN GRAPH (Facebook / LinkedIn / WhatsApp / Discord)
+       ════════════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://sebastian-guardia-t.vercel.app" />
+  <meta property="og:site_name"   content="Sebastian Guardia Portfolio" />
+  <meta property="og:title"       content="Sebastian Guardia — Full Stack Developer &amp; UI/UX Engineer" />
+  <meta property="og:description" content="Portfolio de Sebastian Guardia — Full Stack Developer especializado en React, Next.js, TypeScript, NestJS y animaciones web inmersivas con GSAP y Three.js." />
+  <meta property="og:image"       content="https://sebastian-guardia-t.vercel.app/og-image.png" />
+  <meta property="og:image:alt"   content="Sebastian Guardia — Full Stack Developer Portfolio" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height"content="630" />
+  <meta property="og:locale"      content="es_EC" />
+
+  <!-- ════════════════════════════════════════════════════════
+       TWITTER CARD
+       ════════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://sebastian-guardia-t.vercel.app" />
+  <meta name="twitter:title"       content="Sebastian Guardia — Full Stack Developer &amp; UI/UX Engineer" />
+  <meta name="twitter:description" content="Portfolio de Sebastian Guardia — Full Stack Developer especializado en React, Next.js, TypeScript y animaciones web inmersivas." />
+  <meta name="twitter:image"       content="https://sebastian-guardia-t.vercel.app/og-image.png" />
+  <meta name="twitter:image:alt"   content="Sebastian Guardia — Full Stack Developer Portfolio" />
+  <meta name="twitter:creator"     content="@SebastianG_dev" />
+
+  <!-- ════════════════════════════════════════════════════════
+       PRECONNECT (rendimiento)
+       ════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://github.com" />
+  <link rel="dns-prefetch" href="https://www.linkedin.com" />
+
+  <!-- ════════════════════════════════════════════════════════
+       SCHEMA.ORG — JSON-LD ESTRUCTURADO
+       ════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://sebastian-guardia-t.vercel.app/#person",
+        "name": "Sebastian Guardia",
+        "givenName": "Sebastian",
+        "familyName": "Guardia",
+        "url": "https://sebastian-guardia-t.vercel.app",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://sebastian-guardia-t.vercel.app/sebas.png",
+          "width": 500,
+          "height": 500
+        },
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer especializado en React, Next.js, TypeScript, NestJS y animaciones web inmersivas con GSAP y Three.js.",
+        "nationality": "Ecuadorian",
+        "knowsAbout": [
+          "React", "Next.js", "TypeScript", "Node.js", "NestJS",
+          "PostgreSQL", "Redis", "GSAP", "Three.js", "Docker",
+          "Prisma", "Supabase", "Tailwind CSS"
+        ],
+        "sameAs": [
+          "https://github.com/Sebasguardia",
+          "https://www.linkedin.com/in/sebastian-guardia"
+        ],
+        "email": "mailto:sebastianguardia.dev@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sebastian-guardia-t.vercel.app/#website",
+        "url": "https://sebastian-guardia-t.vercel.app",
+        "name": "Sebastian Guardia Portfolio",
+        "description": "Portfolio profesional de Sebastian Guardia — Full Stack Developer",
+        "inLanguage": "es",
+        "author": { "@id": "https://sebastian-guardia-t.vercel.app/#person" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://sebastian-guardia-t.vercel.app/#webpage",
+        "url": "https://sebastian-guardia-t.vercel.app",
+        "name": "Sebastian Guardia — Full Stack Developer & UI/UX Engineer",
+        "isPartOf": { "@id": "https://sebastian-guardia-t.vercel.app/#website" },
+        "about": { "@id": "https://sebastian-guardia-t.vercel.app/#person" },
+        "description": "Portfolio de Sebastian Guardia — Full Stack Developer especializado en React, Next.js, TypeScript, NestJS y animaciones web inmersivas con GSAP y Three.js.",
+        "inLanguage": "es",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://sebastian-guardia-t.vercel.app"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://sebastian-guardia-t.vercel.app/#profilepage",
+        "url": "https://sebastian-guardia-t.vercel.app",
+        "name": "Sebastian Guardia — Portfolio",
+        "mainEntity": { "@id": "https://sebastian-guardia-t.vercel.app/#person" }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

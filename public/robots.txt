@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Archivos a excluir
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+
+# Sitemap
+Sitemap: https://sebastian-guardia-t.vercel.app/sitemap.xml
+
+# Crawl-delay (opcional, buena práctica)
+Crawl-delay: 10
